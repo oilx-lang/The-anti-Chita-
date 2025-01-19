@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chita Roast Chamber 🔥</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="#comments" class="nav-link">Comments</a>
+            <a href="#favorites" class="nav-link">⭐ Favorites</a>
+            <a href="#hall-of-fame" class="nav-link">🏆 Hall of Fame</a>
+            <div class="nav-auth">
+                <button onclick="showAuth('login')" class="nav-link">Login</button>
+                <button onclick="showAuth('signup')" class="nav-link">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="tech-border">
+            <header class="header-flex">
+                <div class="header-decoration">
+                    <span class="spot-pattern left"></span>
+                    <h1 class="title">
+                        <span class="title-chita">Chita</span>
+                        <span class="title-hyphen">-</span>
+                        <span class="title-zone">Zone</span> 
+                        <span>🐆</span>
+                    </h1>
+                    <span class="spot-pattern right"></span>
+                </div>
+                <p class="subtitle">Where Chitas get exposed fr fr</p>
+            </header>
+
+            <!-- Notification Bell -->
+            <div class="notif-bell" id="notifBell">
+                🔔 <span class="notif-count">0</span>
+            </div>
+
+            <!-- Roast Form -->
+            <div class="comment-form">
+                <h2>Drop Your Comment Here Bestie</h2>
+                <form id="commentForm">
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder="Your name (optional if anonymous)">
+                        <div class="anonymous-mode">
+                            <input type="checkbox" id="anonymousMode">
+                            <label for="anonymousMode">Anonymous Mode 🥷</label>
+                            <p class="mode-desc">Stay lowkey with a random ninja name</p>
+                        </div>
+                    </div>
+                    <textarea id="commentText" placeholder="Drop that anti-chita comment here... 🔥"></textarea>
+                    <button type="submit" class="submit-btn">Post This Heat 🎯</button>
+                </form>
+            </div>
+
+            <!-- Roasts Display -->
+            <div class="comments-container">
+                <h2>Latest Comments</h2>
+                <div class="comment-cards" id="commentCards">
+                    <!-- Comments will be added here dynamically -->
+                </div>
+            </div>
+
+            <!-- Hall of Fame -->
+            <div class="hall-of-fame">
+                <h2>Hall of Fame 👑</h2>
+                <p>The most fire comments fr fr</p>
+                <div class="fame-cards" id="fameCards">
+                    <!-- Hall of fame comments will be added here -->
+                </div>
+            </div>
+
+            <!-- Update the favorites section -->
+            <section id="favorites" class="favorites-section">
+                <h2 class="section-title">⭐ My Favorites</h2>
+                <p class="favorites-note">Your favorite comments will appear here</p>
+                <div id="starredCards" class="comment-cards"></div>
+            </section>
+        </div>
+    </div>
+    <div class="auth-backdrop" id="authBackdrop"></div>
+    <div class="auth-modal" id="authModal">
+        <span class="auth-close" onclick="hideAuth()">×</span>
+        <form id="loginForm" class="auth-form">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" id="loginUsername" required>
+            <input type="password" placeholder="Password" id="loginPassword" required>
+            <div class="auth-buttons">
+                <button type="submit">Login</button>
+                <button type="button" onclick="hideAuth()">Cancel</button>
+            </div>
+            <p class="auth-switch" onclick="switchAuth('signup')">
+                Don't have an account? Sign up
+            </p>
+        </form>
+        <form id="signupForm" class="auth-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Username" id="signupUsername" required>
+            <input type="password" placeholder="Password" id="signupPassword" required>
+            <input type="password" placeholder="Confirm Password" id="signupConfirm" required>
+            <div class="auth-buttons">
+                <button type="submit">Sign Up</button>
+                <button type="button" onclick="hideAuth()">Cancel</button>
+            </div>
+            <p class="auth-switch" onclick="switchAuth('login')">
+                Already have an account? Login
+            </p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
